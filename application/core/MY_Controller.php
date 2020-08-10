@@ -39,6 +39,12 @@ class MY_Controller extends CI_Controller {
 	 */
 	protected $overwriteUrlView = false;
 
+
+	public $swall_titulo_falha   = "Ooops!";
+	public $swall_titulo_sucesso = "Tudo certo aqui !!!";
+	public $swall_tipo           = array('error', 'success', 'warning', 'info');
+	public $swall_timeout        = array('nivel1' => '500', 'nivel2' => '1000', 'nivel3' => '1500', 'nivel4' => '2000');
+	private $usuarioAdministrador;
 	/**
 	 * Class constructor
 	 *
