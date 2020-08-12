@@ -23,7 +23,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on' ) ? 'https://'.$_SERVER["HTTP_HOST"].'/codeigniter-base' : 'http://'.$_SERVER["HTTP_HOST"].'/codeigniter-base';
+$config['path_sublevel'] = PATH_SUBLEVEL;
+$config['base_url'] = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on' ) ? 'https://'.$_SERVER["HTTP_HOST"].'/'.$config['path_sublevel'] : 'http://'.$_SERVER["HTTP_HOST"].'/'.$config['path_sublevel'];
 
 /*
 |--------------------------------------------------------------------------

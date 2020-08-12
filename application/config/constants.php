@@ -23,10 +23,10 @@ defined('SHOW_DEBUG_BACKTRACE') OR define('SHOW_DEBUG_BACKTRACE', TRUE);
 |
 */
 $sub_dominio = explode('.', $_SERVER["HTTP_HOST"]);
-defined('DOMAIN_PATH')  OR define('DOMAIN_PATH', $_SERVER["DOCUMENT_ROOT"].'/');
+defined('PATH_SUBLEVEL') OR define('PATH_SUBLEVEL', '!agendamento-cultos/');
+defined('DOMAIN_PATH')  OR define('DOMAIN_PATH', $_SERVER["DOCUMENT_ROOT"].'/'.PATH_SUBLEVEL);
 defined('NOME_COMPLETO_SISTEMA')  OR define('NOME_COMPLETO_SISTEMA', 'NAME_OF_SYSTEM | Breve Description');
-defined('URL') OR define('URL',  (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on' ) ? 'https://'.$_SERVER["HTTP_HOST"].'/' : 'http://'.$_SERVER["HTTP_HOST"].'/');
-defined('URL_OLD') OR define('URL_OLD',  (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on' ) ? 'https://'.$_SERVER["HTTP_HOST"].'/old/' : 'http://'.$_SERVER["HTTP_HOST"].'/old/');
+defined('URL') OR define('URL',  (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on' ) ? 'https://'.$_SERVER["HTTP_HOST"].'/'.PATH_SUBLEVEL : 'http://'.$_SERVER["HTTP_HOST"].'/'.PATH_SUBLEVEL);
 defined('URL_IMAGES') OR define("URL_IMAGES", URL . 'public/imagens/estaticas/');
 defined('DESENVOLVEDOR_SISTEMA') OR define('DESENVOLVEDOR_SISTEMA', 'NAME_OF_EMP_DEVELEPMENT');
 defined('NOME_CURTO_SISTEMA') OR define('NOME_CURTO_SISTEMA', $sub_dominio[0]);

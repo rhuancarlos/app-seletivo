@@ -1,15 +1,10 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <title> Initial Page</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Grand - Event and Conference Template</title>
+    <?= $this->assets->css; ?>
   </head>
   <body>
-    <div style="background-color:cornflowerblue; padding: 50px;">
-    <?=
-      'Content Header'
-    ?>
-    </div>
-    <ul>
-      <li><a href="<?=base_url('index')?>">Inicio</a> </li>
-      <li><a href="<?=base_url('home')?>">Home</a> </li>
-      <li><a href="<?=base_url('services')?>">Services</a> </li>
-    </ul>

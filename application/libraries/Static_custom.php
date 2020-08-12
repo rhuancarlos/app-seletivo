@@ -99,10 +99,10 @@ class Static_custom {
         (!isset($params['libs_js'])) ? $params['libs_js'] = null : false;
         (!isset($params['libs_js'])) ? $params['apis_js'] = null : false;
         
-        $paramsDefault['css'] = "zabuto_calendar.min|style-responsive|easyTree|chat|webslidemenu|header|footer|menu|main|{$params['css']}";
-        $paramsDefault['libs_css'] = "jquery/css/jquery-ui-1.10.4.custom.min|bootstrap/css/bootstrap.min|font-awesome/css/font-awesome.min|dataTables/css/dataTables.bootstrap.min|{$params['libs_css']}";
-        $paramsDefault['js'] = "html5shiv|respond.min|icheck.min|pace.min|holder|responsive-tabs|zabuto_calendar.min|main|chat|webslidemenu|tabelas|filtro_pesquisa|{$params['js']}";
-        $paramsDefault['libs_js'] = "jquery/js/jquery-1.10.2|bootstrap/js/bootstrap.min|bootstrap/js/bootstrap-hover-dropdown|jquery/js/jquery.slimscroll|jquery/js/jquery.cookie|jquery/js/jquery.menu|jquery/js/jquery.flot|jquery/js/jquery.flot.spline|jquery/js/jquery.flot.categories|jquery/js/jquery.flot.pie|jquery/js/jquery.flot.tooltip|jquery/js/jquery.flot.resize|jquery/js/jquery.flot.fillbetween|jquery/js/jquery.flot.stack|bootstrap/js/bootstrap-notify|bootstrap/js/bootstrap-treeview|dataTables/js/jquery.dataTables.min|dataTables/js/dataTables.bootstrap.min|{$params['libs_js']}";
+        $paramsDefault['css'] = "bootstrap.min|fonts/line-icons|slicknav|nivo-lightbox|animate|main|responsive|{$params['css']}";
+        $paramsDefault['libs_css'] = "{$params['libs_css']}";
+        $paramsDefault['js'] = "jquery-min|popper.min|bootstrap.min|jquery.countdown.min|jquery.nav|jquery.easing.min|wow|jquery.slicknav|nivo-lightbox|main|form-validator.min|contact-form-script.min|map|{$params['js']}";
+        $paramsDefault['libs_js'] = "{$params['libs_js']}";
 
         return $paramsDefault;
     }

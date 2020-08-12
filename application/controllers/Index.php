@@ -10,7 +10,7 @@ class Index extends MY_Controller {
 		parent::__construct();
 		$this->load->library("assets", array(
 			'header' => array('titulo' => "Página Principal", 'subtitulo' => null),
-			'css' => 'application',
+			'css' => '',
 			'libs_js' => '',
 			'js' => ''
 		));
