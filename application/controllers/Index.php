@@ -1,8 +1,4 @@
 <?php
-<<<<<<< HEAD
-=======
-
->>>>>>> 90030ae7fcd79c7ab3402bf2b139b2a2614b36b3
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Index extends MY_Controller {
@@ -12,7 +8,6 @@ class Index extends MY_Controller {
 	public function __construct() {
 		parent::__construct();
 		$this->load->library("assets", array(
-<<<<<<< HEAD
 			'header' => array('titulo' => "Página Principal", 'subtitulo' => null)
 		));
 		$this->stringController = "index";
@@ -132,19 +127,4 @@ class Index extends MY_Controller {
 		$html .= '</u>';
 		$this->rsession->set('menu_completo', $html);
 	}
-=======
-			'header' => array('titulo' => "Página Principal", 'subtitulo' => null),
-			'css' => '',
-			'libs_js' => '',
-			'js' => ''
-		));
-		$this->stringController = "index";
-	}
-
-	public function index() {
-        $this->data_view["conteudo"] = 'conteudo_aqui';
-        #print_r($this->data_view);
-		$this->loadView($this->data_view);
-	}
->>>>>>> 90030ae7fcd79c7ab3402bf2b139b2a2614b36b3
 }
