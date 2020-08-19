@@ -1,5 +1,5 @@
 <?PHP include(VIEWPATH.'layouts/login/header.php'); ?>
-	<div class="all-wrapper menu-side with-pattern" ng-controller="LoginController">
+	<div class="all-wrapper menu-side with-pattern" ng-controller="LoginController" ng-cloak >
 		<div class="row">
 			<div class="auth-box-w">
 				<div class="logo-w">

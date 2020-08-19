@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="ibnfsistema">
 	<head>
 	<title><?= NOME_COMPLETO_SISTEMA?></title>
 		<meta content="ie=edge" http-equiv="x-ua-compatible">
@@ -14,5 +14,7 @@
 		<link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500" rel="stylesheet" type="text/css">
 		<?= $this->assets->css ?>
 		<link rel="stylesheet" href="<?= PATH_PUBLIC_CSS.'main.css?version=4.4.0'?>" type="text/css">
+		<input type="hidden" value="<?= base_url(); ?>" id="base_url" name="base_url">
+		<input type="hidden" value="<?= $this->stringController;?>" id="currentcontroller" name="currentcontroller">
 	</head>
-	<body class="auth-wrapper" ng-app="Siscamp">
+	<body class="auth-wrapper">

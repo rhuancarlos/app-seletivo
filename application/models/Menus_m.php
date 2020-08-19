@@ -10,6 +10,24 @@ class Menus_m extends CI_Model{
 		$this->table_grupos_usuarios_acessos = "grupos_usuarios_acessos";
 	}
 
+	public function getAll() {
+		$this->db->where('status', true);
+		$query = $this->db->get($this->table_menus);
+		return $query ? $query->result() : false;
+	}
+
+	public function getSecao($secao_id) {
+		$this->db->where('id', $secao_id);
+		$query = $this->db->get($this->table_menus);
+		return $query ? $query->row() : false;
+	}
+
+	public function getMenu($menu_id) {
+		$this->db->where('id', $menu_id);
+		$query = $this->db->get($this->table_menu_itens);
+		return $query ? $query->row() : false;
+	}
+
 	public function getMenuAncora() {
 		$this->db->select("*");
 		$this->db->from($this->table_menus." m");
@@ -42,10 +60,11 @@ class Menus_m extends CI_Model{
 			$this->db->where("mi.iditem_sub_menu", $id_sub_menu_pai);
 		} else {
 			$this->db->where("mi.menu_id", $submenus);
+			$this->db->where("mi.sub_menu", true); //adicionei durante a tecla de listagem
 		}
 		$this->db->order_by("mi.ordem","asc");
 		$query = $this->db->get();
-		//print $this->db->last_query();exit;
+		// print $this->db->last_query();exit;
 		return $query->num_rows() > 0 ? $query->result() : array();
 	}
 
@@ -57,5 +76,15 @@ class Menus_m extends CI_Model{
 		}
 		$retorno = $this->db->get();
 		return $retorno->num_rows() > 0 ? $retorno->result() : false;
+	}
+
+	public function _saveMenu($dados, $id = false) {
+		if($id) {
+			// debug_array($i);
+			$this->db->where('id', $id);
+			return $this->db->update($this->table_menus, $dados);
+		} else {
+			return $this->db->insert($this->table_menus, $dados);
+		}
 	}
 }

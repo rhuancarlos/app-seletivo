@@ -4167,7 +4167,7 @@
 		var language = settings.oLanguage;
 		var previousSearch = settings.oPreviousSearch;
 		var features = settings.aanFeatures;
-		var input = '<input type="search" class="'+classes.sFilterInput+'" style="width: 413px;"/>';
+		var input = '<input type="search" class="'+classes.sFilterInput+'" style=""/>';
 		//@CriativeTecnologia
 		var iconRefresh = `<i onclick="reloadTabela(${tableId})" title="Atualizar lista" class="icon-feather-repeat icons-size-2" style="margin-left: 5px;"></i>`;
 		var iconSearchAdvanced = `<i onclick="opcoesBuscaAvancada()" title="Pesquisa Avançada" class="icon-feather-search icons-size-2" style="margin-left: 5px;"></i>`;

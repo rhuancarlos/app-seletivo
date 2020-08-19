@@ -23,8 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-#$config['path_sublevel'] = "ibnfapp_acampoder";
-$config['path_sublevel'] = null;
+$config['path_sublevel'] = PATH_SUBLEVEL;
 $config['base_url'] = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on' ) ? 'https://'.$_SERVER["HTTP_HOST"].'/'.$config['path_sublevel'] : 'http://'.$_SERVER["HTTP_HOST"].'/'.$config['path_sublevel'];
 
 /*

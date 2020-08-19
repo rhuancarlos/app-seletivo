@@ -1,6 +1,6 @@
   //CONSTANTES
   var TABELA_LISTAGEM_GERAL = $("#tabela_grupousuarios") ? $("#tabela_grupousuarios") : false; 
-  const URL_BASE		= document.getElementById('base_url').value;
+  // const URL_BASE		= document.getElementById('base_url').value;
 	const CONTROLLER	= document.getElementById('currentcontroller').value;
 
   //VARIAVEIS

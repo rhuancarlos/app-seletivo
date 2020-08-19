@@ -1,5 +1,5 @@
         <h6 class="element-header"> Participantes por Equipes </h6>
-        <div class="element-content"> <? require_once(VIEWPATH.'widgets/_total_equipes.php');?> </div>
+        <div class="element-content"> <?// require_once(VIEWPATH.'widgets/_total_equipes.php');?> </div>
         </div>
     <div class="row">
       <div class="col-sm-12">      

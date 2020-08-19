@@ -29,5 +29,14 @@ class Menus_itens_m extends CI_Model{
     }
     return false;
   }
+
+	public function _saveMenu($dados, $id = false) {
+		if($id) {
+			$this->db->where('id', $id);
+			return $this->db->update($this->table_menu_itens, $dados);
+		} else {
+			return $this->db->insert($this->table_menu_itens, $dados);
+		}
+	}
   
 }

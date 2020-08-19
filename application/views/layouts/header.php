@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html >
+<html ng-app="ibnfsistema">
 <head lang="pt-br">
   <title><?= isset($title_page) ? $title_page :  NOME_COMPLETO_SISTEMA;?></title>
   <meta http-equiv="x-ua-compatible" content="ie=edge" />
@@ -10,7 +10,7 @@
   <meta http-equiv="content-language" content="<?= implode(",",SISTEMA_TAG_LINGUAGENS) ?>" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link href="<?= URL_IMAGES_ESTATICAS.'favicon/favicon-32x32.png'?>" rel="shortcut icon">
-  <link href="apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="<?= URL_IMAGES_ESTATICAS.'favicon/apple-touch-icon.png'?>" rel="apple-touch-icon">
   <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500" rel="stylesheet" type="text/css">
   <?= $this->assets->css ?>
   <?php #Jamais mudar este arquivo de posição no código pois resultará na estilização da página de forma errada ?>

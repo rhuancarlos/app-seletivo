@@ -1,6 +1,7 @@
 /****************************
  *  FUNÇÕES DE ESCOPO JQUERY
  ***************************/
+const URL_BASE = document.getElementById('base_url').value;
 $(function() {
 	//MASCARA PARA VALORES
  // $('.valores').mask('#.###.###.###,##', {reverse: true});
@@ -74,7 +75,7 @@ function preloader(){
         <div>Carregando...</div><div class="preloader-button"></div>
     </div>`);
   setTimeout(function(){
-    $('.preloader-button').html('<button onclick="removePreloader()" class="btn btn-biogeneses btn-sm">Fechar</button>');
+    $('.preloader-button').html('<button onclick="removePreloader()" class="btn btn-dark btn-sm">Fechar</button>');
   },10);
 }
 

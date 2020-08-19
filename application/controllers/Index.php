@@ -12,11 +12,10 @@ class Index extends MY_Controller {
 		));
 		$this->stringController = "index";
 		$this->permissoes->verificaLogado();
-		$this->load->model(array('menus_m', 'equipes_m'));
+		$this->load->model(array('menus_m'));
 	}
 
 	public function index() {
-		$this->data_view['equipes'] = $this->equipes_m->getAll(false, false, array("widget_tela_inicial" => true), true);
 		$this->data_view['menus'] = $this->getMenu($this->rsession->get('usuario_logado'));
 		$dados_usuario = getDadosUsuario($this->seguranca->dec($this->rsession->get('usuario_logado')['id_usuario']));
 		$this->data_view['primeiro_acesso'] = $dados_usuario->acessos > 1 ? true : false;

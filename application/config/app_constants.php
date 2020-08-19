@@ -11,13 +11,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 $sub_dominio = explode('.', $_SERVER["HTTP_HOST"]);
-defined('DOMAIN_PATH')  OR define('DOMAIN_PATH', $_SERVER["DOCUMENT_ROOT"].'/');
+defined('PATH_SUBLEVEL') OR define('PATH_SUBLEVEL', '');
+defined('DOMAIN_PATH')  OR define('DOMAIN_PATH', $_SERVER["DOCUMENT_ROOT"].'/'.PATH_SUBLEVEL);
 defined('NOME_COMPLETO_SISTEMA')  OR define('NOME_COMPLETO_SISTEMA', 'Siscamp | Gincanas e Provas de Acampamento');
 defined('SIGLA_SISTEMA') OR define('SIGLA_SISTEMA', 'Siscamp');
 defined('NOME_CURTO_SISTEMA') OR define('NOME_CURTO_SISTEMA', 'Siscamp');
 defined('NOME_DOMINIO_SISTEMA') OR define('NOME_DOMINIO_SISTEMA', $sub_dominio[0]);
 defined('SIGLA_SESSAO_SISTEMA') OR define('SIGLA_SESSAO_SISTEMA', "_appacampoder");
-defined('URL') OR define('URL',  (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on' ) ? 'https://'.$_SERVER["HTTP_HOST"].'/' : 'http://'.$_SERVER["HTTP_HOST"].'/');
+defined('URL') OR define('URL',  (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on' ) ? 'https://'.$_SERVER["HTTP_HOST"].'/'.PATH_SUBLEVEL : 'http://'.$_SERVER["HTTP_HOST"].'/'.PATH_SUBLEVEL);
 
 defined('ANO_START_PROJETO') OR define('ANO_START_PROJETO', '2019');
 Defined('SISTEMA_TAG_LINGUAGENS') OR define('SISTEMA_TAG_LINGUAGENS', array('pt-br', 'en-US', 'fr'));
@@ -40,9 +41,9 @@ defined('HASH_ASSETS') OR define("HASH_ASSETS", md5(microtime()));
 
 //-->BANCO DE DADOS REMOTE
 define('HOSTNAME_REMOTE', 'localhost');
-define('HOSTNAME_REMOTE_USER_DB', 'ibnfilad_appacam');
-define('HOSTNAME_REMOTE_PASS_DB', '+%cY9~2I@K~=S;.;VK');
-define('HOSTNAME_REMOTE_NAME_DB', 'ibnfilad_appacampoder');
+define('HOSTNAME_REMOTE_USER_DB', 'ibnfilad_sistema');
+define('HOSTNAME_REMOTE_PASS_DB', 'F~&Cqgtue^@1m#c2r*');
+define('HOSTNAME_REMOTE_NAME_DB', 'ibnfilad_sistema');
 define('HOSTNAME_REMOTE_PORT_DB', '3306');
 
 //-->BANCO DE DADOS LOCALHOST
@@ -78,6 +79,7 @@ defined('PATH_PUBLIC_CSS') OR define('PATH_PUBLIC_CSS', URL . 'public/css/');
 
 defined('VIEW_MODULO_EQUIPES') OR define('VIEW_MODULO_EQUIPES', VIEWPATH . 'equipe/');
 defined('VIEW_MODULO_USUARIOS') OR define('VIEW_MODULO_USUARIOS', VIEWPATH . 'usuarios/');
+defined('VIEW_MODULO_MANUTENCAO_MENUS') OR define('VIEW_MODULO_MANUTENCAO_MENUS', VIEWPATH . 'manutencao_menu/');
 defined('VIEW_MODULO_GRUPOS_USUARIOS') OR define('VIEW_MODULO_GRUPOS_USUARIOS', VIEWPATH . 'grupos_usuarios/');
 defined('VIEW_MODULO_PARTICIPANTES') OR define('VIEW_MODULO_PARTICIPANTES', VIEWPATH . 'participante/');
 defined('VIEW_MODULO_PROVAS') OR define('VIEW_MODULO_PROVAS', VIEWPATH . 'provas/');
