@@ -15,28 +15,6 @@ defined('SHOW_DEBUG_BACKTRACE') OR define('SHOW_DEBUG_BACKTRACE', TRUE);
 
 /*
 |--------------------------------------------------------------------------
-| Declarações de constantes para o desenvolvimento
-|--------------------------------------------------------------------------
-|
-| Todas as constantes declaradas no docorrer do desenvolvimetno devem
-| ser declaradas nesse bloco de código
-|
-*/
-$sub_dominio = explode('.', $_SERVER["HTTP_HOST"]);
-defined('PATH_SUBLEVEL') OR define('PATH_SUBLEVEL', '!agendamento-cultos/');
-defined('DOMAIN_PATH')  OR define('DOMAIN_PATH', $_SERVER["DOCUMENT_ROOT"].'/'.PATH_SUBLEVEL);
-defined('NOME_COMPLETO_SISTEMA')  OR define('NOME_COMPLETO_SISTEMA', 'NAME_OF_SYSTEM | Breve Description');
-defined('URL') OR define('URL',  (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on' ) ? 'https://'.$_SERVER["HTTP_HOST"].'/'.PATH_SUBLEVEL : 'http://'.$_SERVER["HTTP_HOST"].'/'.PATH_SUBLEVEL);
-defined('URL_IMAGES') OR define("URL_IMAGES", URL . 'public/imagens/estaticas/');
-defined('DESENVOLVEDOR_SISTEMA') OR define('DESENVOLVEDOR_SISTEMA', 'NAME_OF_EMP_DEVELEPMENT');
-defined('NOME_CURTO_SISTEMA') OR define('NOME_CURTO_SISTEMA', $sub_dominio[0]);
-defined('SIGLA_SESSAO_SISTEMA') OR define('SIGLA_SESSAO_SISTEMA', "_namesystem");
-defined('URL_API') OR define("URL_API", 'link_for_api_here');
-defined('ID_PRODUTO_SISTEMA') OR define('ID_PRODUTO_SISTEMA', 999);
-define("HASH_ASSETS", exec('git rev-parse HEAD'));
-
-/*
-|--------------------------------------------------------------------------
 | File and Directory Modes
 |--------------------------------------------------------------------------
 |
@@ -105,3 +83,15 @@ defined('EXIT_USER_INPUT')     OR define('EXIT_USER_INPUT', 7); // invalid user 
 defined('EXIT_DATABASE')       OR define('EXIT_DATABASE', 8); // database error
 defined('EXIT__AUTO_MIN')      OR define('EXIT__AUTO_MIN', 9); // lowest automatically-assigned error code
 defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest automatically-assigned error code
+
+
+/*-------------------------------------------------
+| FILE OF CONSTANTS FOR CONFIGURATION PERSONALIZED
+|-------------------------------------------------*/
+include('app_constants.php');
+
+
+/*----------------------------------------------------
+| FILE OF TITLES, SUB-TITLES IN PAGES, INPUTS, REGIONS
+|----------------------------------------------------*/
+include('app_titles.php');
