@@ -75,18 +75,11 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-<<<<<<< HEAD
     'hostname' => HOSTNAME_REMOTE,
     'username' => HOSTNAME_REMOTE_USER_DB,
     'password' => HOSTNAME_REMOTE_PASS_DB,
     'database' => HOSTNAME_REMOTE_NAME_DB,
     'port'     => HOSTNAME_REMOTE_PORT_DB,
-=======
-	'hostname' => 'localhost',
-	'username' => '',
-	'password' => '',
-	'database' => '',
->>>>>>> 90030ae7fcd79c7ab3402bf2b139b2a2614b36b3
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
@@ -101,8 +94,4 @@ $db['default'] = array(
 	'stricton' => FALSE,
 	'failover' => array(),
 	'save_queries' => TRUE
-<<<<<<< HEAD
 );
-=======
-);
->>>>>>> 90030ae7fcd79c7ab3402bf2b139b2a2614b36b3

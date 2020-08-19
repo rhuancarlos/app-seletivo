@@ -55,11 +55,7 @@ class Seguranca {
         //$gera_pass = md5(sha1($this->salt_senha.$senha.$login));
         if(empty($login)) {
             $salt = '102d10d54sdsdhf4f5f54f50f5s4f4505f';
-<<<<<<< HEAD
             $gera_pass = sha1($this->salt_senha.$senha.'AcreditoConfieLuteNãoDesista.ETudoDaráCerto');
-=======
-            $gera_pass = sha1($this->salt_senha.$senha.'Gênesis');
->>>>>>> 90030ae7fcd79c7ab3402bf2b139b2a2614b36b3
         } else {
             $salt = "0c8a1ca3e1316de28f8af408a684284c";
             $gera_pass = md5($login.$salt.$senha);
