@@ -101,7 +101,7 @@ class Static_custom {
         
         $paramsDefault['css'] = "bootstrap.min|fonts/line-icons|slicknav|nivo-lightbox|animate|main|responsive|{$params['css']}";
         $paramsDefault['libs_css'] = "{$params['libs_css']}";
-        $paramsDefault['js'] = "jquery-min|popper.min|bootstrap.min|jquery.countdown.min|jquery.nav|jquery.easing.min|wow|jquery.slicknav|nivo-lightbox|main|form-validator.min|contact-form-script.min|map|{$params['js']}";
+        $paramsDefault['js'] = "jquery-min|popper.min|bootstrap.min|jquery.countdown.min|jquery.nav|jquery.easing.min|wow|jquery.slicknav|nivo-lightbox|main|form-validator.min|contact-form-script.min|angularjs/angular|angularjs/i18n/angular-locale_pt-br|{$params['js']}";
         $paramsDefault['libs_js'] = "{$params['libs_js']}";
 
         return $paramsDefault;

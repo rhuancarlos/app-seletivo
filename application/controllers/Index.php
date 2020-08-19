@@ -12,7 +12,7 @@ class Index extends MY_Controller {
 			'header' => array('titulo' => "Página Principal", 'subtitulo' => null),
 			'css' => '',
 			'libs_js' => '',
-			'js' => ''
+			'js' => 'agendamento/controllers/AgendamentoController|agendamento/services/AgendamentoService'
 		));
 		$this->stringController = "index";
 	}
