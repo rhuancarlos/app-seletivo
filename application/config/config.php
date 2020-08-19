@@ -77,7 +77,11 @@ $config['url_suffix'] = '';
 | than english.
 |
 */
+<<<<<<< HEAD
 $config['language']	= 'portuguese-br';
+=======
+$config['language']	= 'english';
+>>>>>>> 90030ae7fcd79c7ab3402bf2b139b2a2614b36b3
 
 /*
 |--------------------------------------------------------------------------
@@ -159,7 +163,11 @@ $config['composer_autoload'] = FALSE;
 | DO NOT CHANGE THIS UNLESS YOU FULLY UNDERSTAND THE REPERCUSSIONS!!
 |
 */
+<<<<<<< HEAD
 $config['permitted_uri_chars'] = 'a-z 0-9~%.:_\?&=-';
+=======
+$config['permitted_uri_chars'] = 'a-z 0-9~%.:_\-';
+>>>>>>> 90030ae7fcd79c7ab3402bf2b139b2a2614b36b3
 
 /*
 |--------------------------------------------------------------------------
@@ -379,7 +387,11 @@ $config['encryption_key'] = '';
 |
 */
 $config['sess_driver'] = 'files';
+<<<<<<< HEAD
 $config['sess_cookie_name'] = '_APPacampoder';
+=======
+$config['sess_cookie_name'] = 'ci_session';
+>>>>>>> 90030ae7fcd79c7ab3402bf2b139b2a2614b36b3
 $config['sess_expiration'] = 7200;
 $config['sess_save_path'] = NULL;
 $config['sess_match_ip'] = FALSE;
@@ -522,9 +534,12 @@ $config['rewrite_short_tags'] = FALSE;
 | Array:		array('10.0.1.200', '192.168.5.0/24')
 */
 $config['proxy_ips'] = '';
+<<<<<<< HEAD
 
 
 /*-------------------------------------------------
 | FILE OF CONFIGURATION PERSONALIZED
 |-------------------------------------------------*/
 include('app_config.php');
+=======
+>>>>>>> 90030ae7fcd79c7ab3402bf2b139b2a2614b36b3

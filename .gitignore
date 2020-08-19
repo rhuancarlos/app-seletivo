@@ -37,6 +37,10 @@ files_extras/*
 .vscode/*
 
 # FILES Ignore
+<<<<<<< HEAD
 !application/config/database.php
+=======
+#!application/config/database.php
+>>>>>>> 90030ae7fcd79c7ab3402bf2b139b2a2614b36b3
 sessions/*
 sftp-config.json

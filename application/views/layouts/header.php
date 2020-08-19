@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<<<<<<< HEAD
 <html ng-app="ibnfsistema">
 <head lang="pt-br">
   <title><?= isset($title_page) ? $title_page :  NOME_COMPLETO_SISTEMA;?></title>
@@ -74,3 +75,14 @@
             <div class="content-box">
                   <div class="element-wrapper">
      
+=======
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Grand - Event and Conference Template</title>
+    <?= $this->assets->css; ?>
+  </head>
+  <body>
+>>>>>>> 90030ae7fcd79c7ab3402bf2b139b2a2614b36b3
