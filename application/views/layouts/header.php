@@ -7,4 +7,4 @@
     <title>Grand - Event and Conference Template</title>
     <?= $this->assets->css; ?>
   </head>
-  <body>
+  <body id="schedules" class="schedule section-padding">

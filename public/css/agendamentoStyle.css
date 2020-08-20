@@ -1,0 +1,45 @@
+.btn.disabled, .btn:disabled {
+    opacity: .65;
+    cursor: not-allowed !important;
+}
+
+#copyright {
+  position:absolute !important;
+  bottom:0 !important;
+  width:100%;
+  background: #0b0b0b;
+  text-align: center;
+}
+
+.site-info {
+  text-align: center;
+  color: #747c84;
+}
+
+.buttons-footer{
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.section-title-header p {
+  text: center;
+  font-weight: 400;
+  line-height: 26px;
+  padding: 0px;
+}
+
+.section-title {
+  padding-bottom: 10px;
+}
+
+
+.section-padding {
+  padding: 20px 0 !important;
+}
+
+.container-form {
+  padding: 16px 15px;
+  height: 419px !important;
+  overflow-y: auto;
+}

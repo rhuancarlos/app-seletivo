@@ -1,15 +1,18 @@
 var app = angular.module("IbnfAgendamento",[]);
 
 app.controller("AgendamentoController", function($scope, AgendamentoService){
-  $scope.screen = 1;
+  $scope.screenStage = 1;
   $scope.dados = [];
   // $scope.LoadPage();
 
   // $scope.LoadPage = function(){
   // };
   // intervaloDatas('periodo-competicao');
-  $scope.changeForm = (form) => {
-    return $scope.screen = form
+  $scope.nextScreenStage = (form) => {
+    return $scope.screenStage = form+1;
+  }
+  $scope.backScreenStage = (form) => {
+    return $scope.screenStage = form-1;
   }
   
   // $scope.intervaloDatas = (obj) =>{
