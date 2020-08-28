@@ -1,71 +1,5 @@
-/****************************
- *  FUNÇÕES DE ESCOPO JQUERY
- ***************************/
-const URL_BASE = document.getElementById('base_url').value;
-$(function() {
-	//MASCARA PARA VALORES
- // $('.valores').mask('#.###.###.###,##', {reverse: true});
-  $('.valores').mask('#.##0,00', {reverse: true});
-
-  $('.numeros').mask('#########################');
-
-	//MASCARA PARA CEP
-	$('.endereco_cpf').mask('#####-###');
-
-	//MASCARA PARA TELEFONE CELULAR '9º' DIGITO + DDD
-	$('.telefone_celular').mask('(##) #####-####');
-
-	//MASCARA PARA TELEFONE FIXO DDD
-  $('.telefone_fixo').mask('(##) ####-####');
-  
-  //MASCARA PARA CPF
-  $('.documento_cpf').mask('###.###.###-##');
-
-  $('.data').datepicker({
-    language: "pt-BR",
-    autoclose: true,
-    clearBtn: true,
-    startView: 0,
-    endDate: '0d',
-    todayHighlight: true,
-    format: "dd/mm/yyyy"
-  });
-  
-  /*******************************
-  * ACCORDION WITH TOGGLE ICONS
-  *******************************/
-  function toggleIcon(e) {
-    $(e.target)
-      .prev('.panel-heading')
-      .find(".more-less")
-      .toggleClass('os-icon os-icon-arrow-down5 os-icon os-icon-arrow-up5');
-  }
-
-  $('.panel-group').on('hidden.bs.collapse', toggleIcon);
-  $('.panel-group').on('shown.bs.collapse', toggleIcon);
-});
-
-
-/**
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * ****************************
+const URL_BASE = document.getElementById('base_url').value; 
+ /* ****************************
  * FUNÇÕES DE ESCOPO JAVASCRIPT
  ******************************/
 function preloader(){
@@ -77,51 +11,6 @@ function preloader(){
   setTimeout(function(){
     $('.preloader-button').html('<button onclick="removePreloader()" class="btn btn-dark btn-sm">Fechar</button>');
   },10);
-}
-
-intervaloDatas = (obj) =>{
-  // $('input[name="periodo_competicao"]').daterangepicker({
-  $(`#${obj}`).daterangepicker({
-    opens: 'left',
-    locale: {
-      "format": "DD/MM/YYYY",
-      "separator": " - ",
-      "applyLabel": "Aplicar",
-      "cancelLabel": "Cancelar",
-      "fromLabel": "De",
-      "toLabel": "Para",
-      "customRangeLabel": "Custom",
-      "weekLabel": "W",
-      "daysOfWeek": [
-          "Do",
-          "Seg",
-          "Ter",
-          "Qua",
-          "Qui",
-          "Sex",
-          "Sab"
-      ],
-      "monthNames": [
-        "Janeiro",
-        "Fevereiro",
-        "Março",
-        "Abril",
-        "Posso",
-        "Junho",
-        "Julho",
-        "Agosto",
-        "Setembro",
-        "Outubro",
-        "Novembro",
-        "Dezembro"
-      ],
-      "firstDay": 1
-    },
-
-  // }, function(start, end, label) {
-  //   console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
-  });
-  console.log(obj)
 }
 
 function removePreloader(){

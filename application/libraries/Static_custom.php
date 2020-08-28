@@ -99,10 +99,10 @@ class Static_custom {
         (!isset($params['libs_js'])) ? $params['libs_js'] = null : false;
         (!isset($params['libs_js'])) ? $params['apis_js'] = null : false;
         
-        $paramsDefault['css'] = "bootstrap.min|fonts/line-icons|slicknav|nivo-lightbox|animate|main|responsive|{$params['css']}";
+        $paramsDefault['css'] = "bootstrap.min|fontawesome.all|slicknav|nivo-lightbox|animate|main|responsive|{$params['css']}";
         $paramsDefault['libs_css'] = "{$params['libs_css']}";
-        $paramsDefault['js'] = "jquery-min|popper.min|bootstrap.min|jquery.countdown.min|jquery.nav|jquery.easing.min|wow|jquery.slicknav|nivo-lightbox|main|form-validator.min|contact-form-script.min|angularjs/angular|angularjs/i18n/angular-locale_pt-br|{$params['js']}";
-        $paramsDefault['libs_js'] = "{$params['libs_js']}";
+        $paramsDefault['js'] = "jquery-min|funcoes_gerais|bootstrap.min|angularjs/angular|angularjs/i18n/angular-locale_pt-br|re-tree|ng-device-detector|ua-device-detector|{$params['js']}";
+        $paramsDefault['libs_js'] = "sweetalert/js/sweetalert2.all.min|{$params['libs_js']}";
 
         return $paramsDefault;
     }
