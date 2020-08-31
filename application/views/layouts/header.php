@@ -16,5 +16,15 @@
     <?= $this->assets->css ?>
     <input type="hidden" value="<?= base_url(); ?>" id="base_url" name="base_url">
     <input type="hidden" value="<?= $this->stringController;?>" id="currentcontroller" name="currentcontroller">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-105598844-6"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-105598844-6');
+    </script>
+
   </head>
   <body id="schedules" class="schedule section-padding">
