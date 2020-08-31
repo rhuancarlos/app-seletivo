@@ -87,7 +87,7 @@ if(!function_exists('debug_array')):
                         print "</span></pre>";
                     }
                     print "<br>";
-                    #exit;
+                    // exit;
                 } else {
                     print "<pre style='padding: 0px !important; margin: 0px !important;'>";
                     print "<span style='color: red; font-weight: 800;'>".$posicao."[".$key."] = </span>"; //IMPRIMINDO CHAVE
@@ -158,14 +158,26 @@ if(!function_exists('geraCodigo')):
     }
 endif;
 
+if(!function_exists('getParametros')):
+    function getParametros($id_parametro = false, $secao = false, $descricao_parametro = false){
+        $ci = & get_instance();
+        $ci->load->model('parametros_m');
+        $parametro = $ci->parametros_m->getParametros($id_parametro, $secao, $descricao_parametro);
+        if($parametro) {
+            return $parametro;
+        }
+        return false;
+    }
+endif;
+
 if(!function_exists('getParametroPorDescricao')):
-    function getParametroPorDescricao($descricao_parametro){
+    function getParametroPorDescricao($descricao_parametro, $secao = false){
         $ci = & get_instance();
         $ci->load->model('parametros_m');
         if(empty($descricao_parametro)) {
             return false;
         }
-        $parametro = $ci->parametros_m->getParametroPorDescricao($descricao_parametro);
+        $parametro = $ci->parametros_m->getParametroPorDescricao($descricao_parametro, $secao);
         if($parametro) {
             return $parametro;
         }

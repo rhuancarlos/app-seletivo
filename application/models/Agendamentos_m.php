@@ -65,7 +65,7 @@ class Agendamentos_m extends CI_Model{
 		}
 		$this->db->where("idagendamento", $codigo_agendamento);
     $update = $this->db->update($this->table_agendamentos, $dadosUpdate);
-    return $update || false;
+    return $update;
 	}
 	
   public function getTotalAgendamentos() {
@@ -74,5 +74,17 @@ class Agendamentos_m extends CI_Model{
     if(isset($result)) return $result->num;
     return 0;
 	}
+	
+  public function getTotalAgendamentosPorPeriodo($periodo) {
+		$this->db->select("
+			count(*) as total_agendamentos,
+			sum(qtd_acompanhante) as total_acompanhantes
+		");
+		$this->db->from($this->table_agendamentos);
+		$this->db->where("a.dia_celebracao = '{$periodo}'");
+    $query = $this->db->get();
+    return $query ? $query->row() : false;
+	}
+	
 
 }

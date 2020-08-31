@@ -1,4 +1,4 @@
-var app = angular.module("ibnfagendamento",["ng.deviceDetector"]);
+var app = angular.module("ibnfagendamento",["ng.deviceDetector", "ngSanitize"]);
 
 app.controller("AgendamentoController", function($scope, deviceDetector, agendamentoApi){
   $scope.screenStage = 1;
@@ -10,7 +10,20 @@ app.controller("AgendamentoController", function($scope, deviceDetector, agendam
   $scope.data = deviceDetector;
   $scope.allData = JSON.stringify($scope.data, null, 2);
   $scope.dataDefault = {};
-  // console.log($scope.allData);
+  $scope.contentVagas = "";
+
+  $scope.getVagancyCount = () => {
+    $scope.contentVagas = `aguarde ...`;
+    agendamentoApi.getVagancyCount($scope.dataDefault.dia_celebracao).then((response) => {
+      $scope.dataDefault.situacao_vagas = response.data.status;
+      if(response.data.status) {
+        $scope.contentVagas = `Vaga(s) disponível(is): ${response.data.qtd_agendamentos_disponiveis}`;
+      } else {
+        $scope.contentVagas = `Vagas Esgotadas. Disponíveis aos domingos as 21h.`;
+      }
+    });
+    //$scope.getDataDefault();
+  }
 
   $scope.getDataDefault = (_) => {
     agendamentoApi.getDataDefault().then((response) => {
@@ -18,17 +31,23 @@ app.controller("AgendamentoController", function($scope, deviceDetector, agendam
         for (const key in response.data.dados.Agendamento) {
           if (response.data.dados.Agendamento.hasOwnProperty(key)) {
             const element = response.data.dados.Agendamento[key];
+            if(element.parametro == 'habilitar_agendamento') {
+              $scope.dataDefault.habilitar_agendamento = element.value;
+            }
             if(element.parametro == 'dia_celebracao') {
               $scope.dataDefault.dia_celebracao = element.value;
             }
             if(element.parametro == 'validar_autenticidade_por') {
               $scope.dataDefault.validar_autenticidade_por = element.value;
             }
+            if(element.parametro == 'total_vagas_ofertadas') {
+              $scope.getVagancyCount();
+            }
           }
         }
-        // $scope.dataDefault.inicio_inscricoes = response.data.dados.agendamento.
       }
     });
+    //$scope.getVagancyCount();
   }
   $scope.getDataDefault();
 
@@ -38,14 +57,17 @@ app.controller("AgendamentoController", function($scope, deviceDetector, agendam
       return $scope.screenStage = form+1;
     }
   }
+
   $scope.backScreenStage = (form) => {
     return $scope.screenStage = form-1;
   }
-
+  //$scope.getVagancyCount();
+  
   $scope.cancelScheduling = () => {
     $scope.dadosAgendamento.dados_pessoais = {}
     $scope.screenStage = 1;
   }
+
 
   $scope.checkNextStage = (stageCurrent, formulario) => {
     let inputsInvalids = []
@@ -102,18 +124,16 @@ app.controller("AgendamentoController", function($scope, deviceDetector, agendam
       Swal.fire({type: 'warning',title: 'Ops... Algo errado',html: 'Por favor verifique as opções do formulário'});
       return false;
     } else {
+      
+      dadosAgendamento.dia_celebracao = $scope.dataDefault.dia_celebracao;
       agendamentoApi.saveScheduling(dadosAgendamento).then((response) => {
         if(!response.data.status) {
           Swal.fire({type:'error', title: 'Ops... Algo errado', html: response.data.mensagem});
-          // .then((confirm) => {
-          //   if(confirm) {
-
-          //   }
-          // });
           return false;
         }
         if(response.data.status) {
           Swal.fire({type:'success', title: 'êba! Tudo certo aqui', html: response.data.mensagem});
+          $scope.getVagancyCount();
           $scope.dadosAgendamento = {};
           $scope.screenStage = 1;
           return false;

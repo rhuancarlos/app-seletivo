@@ -5,12 +5,18 @@
       <div class="row justify-content-center">
         <div class="col-12">
           <div class="section-title-header text-center">
-            <h1 class="section-title wow fadeInUp" data-wow-delay="0.2s"><?= $elementos_pagina['titulo']; ?></h1>
-            <h5>Data da celebração {{dataDefault.dia_celebracao}} </h5>
+            <h1 class="section-title wow fadeInUp" data-wow-delay="0.2s">
+              <a href="<?= base_url()?>"><?= $elementos_pagina['titulo']; ?></a>
+            </h1>
+            <h5 ng-if="dataDefault.dia_celebracao">Data da celebração {{dataDefault.dia_celebracao}} </h5>
+            <h5 ng-bind-html="contentVagas" ng-class="{'vagas-disponiveis': dataDefault.situacao_vagas, 'vagas-indisponiveis': !dataDefault.situacao_vagas}"></h5>
+            <span class="badge badge-pill badge-primary" style="cursor: pointer;" ng-click="getVagancyCount()">
+              <i class="fas fa-sync-alt"></i> Atualizar vagas
+            </span>
           </div>
         </div>
         <!-- {{allData}} -->
-        <div class="col-lg-7 col-md-12 col-xs-12">
+        <div class="col-lg-7 col-md-12 col-xs-12" id="boxStages" ng-if="(dataDefault.situacao_vagas && (dataDefault.habilitar_agendamento))">
           <div class="container-form wow fadeInLeft" data-wow-delay="0.2s">
             <form name="formAgendamento">
               <div class="form-wrapper" ng-if="screenStage == 1">
@@ -78,8 +84,8 @@
                           <tbody>
                             <tr>
                               <td>DOMINGO</td>
-                              <td><input type="radio" value="16" name="cultoHorario" required id="cultoHorario_16" ng-model="dadosAgendamento.dados_pessoais.culto_horario"> 16H</td>
-                              <td><input type="radio" value="18" name="cultoHorario" required id="cultoHorario_18" ng-model="dadosAgendamento.dados_pessoais.culto_horario"> 18H</td>
+                              <td><input type="radio" value="16:00" name="cultoHorario" required id="cultoHorario_16" ng-model="dadosAgendamento.dados_pessoais.culto_horario"> 16H</td>
+                              <!-- <td><input type="radio" value="18:00" name="cultoHorario" required id="cultoHorario_18" ng-model="dadosAgendamento.dados_pessoais.culto_horario"> 18H</td> -->
                             </tr>
                           </tbody>
                         </table>
