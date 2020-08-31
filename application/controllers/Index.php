@@ -31,11 +31,19 @@ class Index extends MY_Controller {
 
 	private function getElementosPagina() {
 
+		// $dados['stage1']['texto_area_principal'] = "<p><strong>Graça e Paz!</strong><br><br>
+		// É com imensa alegria que informamos nosso retorno aos cultos presenciais, adequados com todas as medidas de segurança, estamos abertos para adorar livremente o nosso Deus.
+		// Como a expectativa está grande para essa CELEBRAÇÃO HISTÓRICA, e pensando no seu conforto e segurança`. <br>Seguiremos com um agendamento para nossos cultos, pois estamos com vagas limitadas devido as medidas de segurança.<br>
+		// Assim, juntamente com sua Família estaremos todos reunidos da melhor forma possível.<br><br>
+		// Esperamos você e sua Família, estamos com saudades de adorarmos todos juntos como Igreja!</p>";
 		$dados['stage1']['texto_area_principal'] = "<p><strong>Graça e Paz!</strong><br><br>
-		É com imensa alegria que informamos nosso retorno aos cultos presenciais, adequados com todas as medidas de segurança, estamos abertos para adorar livremente o nosso Deus.
-		Como a expectativa está grande para essa CELEBRAÇÃO HISTÓRICA, e pensando no seu conforto e segurança`. <br>Seguiremos com um agendamento para nossos cultos, pois estamos com vagas limitadas devido as medidas de segurança.<br>
-		Assim, juntamente com sua Família estaremos todos reunidos da melhor forma possível.<br><br>
-		Esperamos você e sua Família, estamos com saudades de adorarmos todos juntos como Igreja!</p>";
+		Estamos a todo vapor em nosso retorno aos cultos presenciais, adequados com todas as medidas de segurança, estamos abertos para adorar livremente o nosso Deus. Pensando no seu conforto e segurança. Seguiremos com um agendamento para nossos cultos, pois estamos com vagas limitadas devido as medidas de segurança.
+		Assim, juntamente com sua Família estaremos todos reunidos da melhor forma possível. <b>Esperamos você e sua Família, estamos com saudades de adorarmos todos juntos como Igreja!</b><br><br>
+		<b style='color: red;'>Obs: Agora temos agendamento somente no culto das 16h. O culto das 18h está liberado sem agendamento. Avise seus amigos e discípulos.</b>
+		</p>";
+		
+
+
 		
 		$dados['stage2']['title'] = "SOBRE VOCÊ";
 		$dados['stage2']['descendencia'] = array

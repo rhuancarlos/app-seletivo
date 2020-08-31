@@ -35,7 +35,7 @@
 
 
 .section-padding {
-  padding: 20px 0 !important;
+  padding: 10px 0 !important;
 }
 
 .container-form {
@@ -93,3 +93,22 @@ h4 {
 .swal2-popup {
   font-size: 0.7rem !important;
 }
+
+.vagas-disponiveis {
+  color: green;
+  font-weight: bold;
+}
+
+.vagas-indisponiveis {
+  color: #e25d5d;
+  font-weight: bold;
+}
+
+a:visited {
+  color: black;
+}
+
+a {
+  color: black;
+}
+/* *|*:visited */
