@@ -99,10 +99,10 @@ class Static_custom {
         (!isset($params['libs_js'])) ? $params['libs_js'] = null : false;
         (!isset($params['libs_js'])) ? $params['apis_js'] = null : false;
         
-        $paramsDefault['css'] = "bootstrap.min|fonts/line-icons|slicknav|nivo-lightbox|animate|main|responsive|{$params['css']}";
+        $paramsDefault['css'] = "bootstrap.min|fontawesome.all|slicknav|nivo-lightbox|animate|main|responsive|{$params['css']}";
         $paramsDefault['libs_css'] = "{$params['libs_css']}";
-        $paramsDefault['js'] = "jquery-min|popper.min|bootstrap.min|jquery.countdown.min|jquery.nav|jquery.easing.min|wow|jquery.slicknav|nivo-lightbox|main|form-validator.min|contact-form-script.min|angularjs/angular|angularjs/i18n/angular-locale_pt-br|{$params['js']}";
-        $paramsDefault['libs_js'] = "{$params['libs_js']}";
+        $paramsDefault['js'] = "jquery-min|funcoes_gerais|bootstrap.min|angularjs/angular|angularjs/i18n/angular-locale_pt-br|re-tree|ng-device-detector|ua-device-detector|angularjs/angular-sanitize|{$params['js']}";
+        $paramsDefault['libs_js'] = "sweetalert/js/sweetalert2.all.min|{$params['libs_js']}";
 
         return $paramsDefault;
     }
@@ -121,6 +121,7 @@ class Static_custom {
         foreach ($files_css as $key => $v) {
             if (!empty($v)) {
                 $this->output_css .= "<link rel=\"stylesheet\" href=\"{$this->base_url}{$this->path_css}{$v}.css?{$this->hash_file}\" type=\"text/css\">";
+                $this->output_css .= PHP_EOL;
             }
         }
         // $this->file_css = $file;
@@ -141,6 +142,7 @@ class Static_custom {
       foreach ($files_css as $key => $v) {
         if (!empty($v)) {
           $this->output_css .= "<link rel=\"stylesheet\" href=\"{$this->base_url}{$this->path_libs}{$v}.css?{$this->hash_file}\" type=\"text/css\">";
+          $this->output_css .= PHP_EOL;
         }
       }
     }
@@ -159,6 +161,7 @@ class Static_custom {
       foreach ($files_js as $key => $v) {
         if (!empty($v)) {
           $this->output_js .= "<script src=\"{$this->base_url}{$this->path_js}{$v}.js?{$this->hash_file}\"></script>";
+          $this->output_js .= PHP_EOL;
         }
       }
     }
@@ -177,6 +180,7 @@ class Static_custom {
         foreach ($files_js as $key => $v) {
           if (!empty($v)) {
             $this->output_js .= "<script src=\"{$this->base_url}{$this->path_libs}{$v}.js?{$this->hash_file}\"></script>";
+            $this->output_js .= PHP_EOL;
           }
         }
     }
