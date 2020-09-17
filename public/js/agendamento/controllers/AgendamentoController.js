@@ -19,7 +19,8 @@ app.controller("AgendamentoController", function($scope, deviceDetector, agendam
       if(response.data.status) {
         $scope.contentVagas = `Vaga(s) disponível(is): ${response.data.qtd_agendamentos_disponiveis}`;
       } else {
-        $scope.contentVagas = `Vagas Esgotadas. Disponíveis aos domingos as 21h.`;
+        $scope.contentVagas = `Vagas Esgotadas !<br><small>(novas vagas aos Domingos as 21h)</small><br><br> 
+        Não conseguiu reservar sua vaga? Não se preocupe, a Celebração das 18h é livre de agendamento.<br>Seja muito bem vindo, esperamos você e sua Família.`;
       }
     });
     //$scope.getDataDefault();
