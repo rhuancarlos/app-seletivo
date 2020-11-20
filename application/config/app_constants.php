@@ -11,7 +11,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 $sub_dominio = explode('.', $_SERVER["HTTP_HOST"]);
-defined('PATH_SUBLEVEL') OR define('PATH_SUBLEVEL', '!agendamento-cultos/');
+defined('PATH_SUBLEVEL') OR define('PATH_SUBLEVEL', 'publico/');
 defined('DOMAIN_PATH')  OR define('DOMAIN_PATH', $_SERVER["DOCUMENT_ROOT"].'/'.PATH_SUBLEVEL);
 defined('NOME_COMPLETO_SISTEMA')  OR define('NOME_COMPLETO_SISTEMA', 'Agendamento Filadélfia | Agendamento de participação de cultos presenciais');
 defined('SIGLA_SISTEMA') OR define('SIGLA_SISTEMA', 'IBN Filadélfia');

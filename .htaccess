@@ -1,5 +1,5 @@
 RewriteEngine on
-RewriteBase /
+#RewriteBase / <-- REMOVER CASO O CI ESTEJA INSTALADO EM UM NIVEL ACIMA DO ./ DO SERVIDOR
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ index.php/$1 [L]
