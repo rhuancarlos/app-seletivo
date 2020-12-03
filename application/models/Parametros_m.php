@@ -19,13 +19,15 @@ class Parametros_m extends CI_Model{
 			$this->db->where("p.secao like '%$secao%'");
 		}
 		
+		$this->db->where("p.status", true);
 		if($descricao_parametro) {
 			$this->db->where("p.descricao_parametro like '%$descricao_parametro%'");
+			$query = $this->db->get();
+			return $query->num_rows() > 0 ? $query->row() : false;
+		} else {
+			$query = $this->db->get();
+			return $query->num_rows() > 0 ? $query->result() : false;
 		}
-		$this->db->where("p.status", true);
-		$query = $this->db->get();
-		// print $this->db->last_query();exit;
-		return $query->num_rows() > 0 ? $query->result() : false;
 	}
 	
 	public function getParametroPorDescricao($descricao_parametro, $secao = false) {

@@ -89,7 +89,7 @@ $autoload['drivers'] = array();
 |
 |	$autoload['helper'] = array('url', 'file');
 */
-$autoload['helper'] = array('url', 'funcoes', 'redes_infraestrutura', 'datas', 'get_dadosdb', 'strings');
+$autoload['helper'] = array('url', 'funcoes', 'redes_infraestrutura', 'datas', 'get_dadosdb', 'strings', 'parametros');
 
 /*
 | -------------------------------------------------------------------

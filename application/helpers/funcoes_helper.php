@@ -144,7 +144,7 @@ if(!function_exists('verificaUsoDeProva')):
     }
 endif;
 
-if(!function_exists('geraCodigo')):
+if(!function_exists('geraCodigoTamanhoPersonalizado')):
     function geraCodigoTamanhoPersonalizado($dados, $chave = false, $tamanho){
         if(empty($dados)) {
             return false;
@@ -155,32 +155,5 @@ if(!function_exists('geraCodigo')):
             $retorno = substr(md5($dados.date('s:u')), 0, 5);
         }
         return $retorno;
-    }
-endif;
-
-if(!function_exists('getParametros')):
-    function getParametros($id_parametro = false, $secao = false, $descricao_parametro = false){
-        $ci = & get_instance();
-        $ci->load->model('parametros_m');
-        $parametro = $ci->parametros_m->getParametros($id_parametro, $secao, $descricao_parametro);
-        if($parametro) {
-            return $parametro;
-        }
-        return false;
-    }
-endif;
-
-if(!function_exists('getParametroPorDescricao')):
-    function getParametroPorDescricao($descricao_parametro, $secao = false){
-        $ci = & get_instance();
-        $ci->load->model('parametros_m');
-        if(empty($descricao_parametro)) {
-            return false;
-        }
-        $parametro = $ci->parametros_m->getParametroPorDescricao($descricao_parametro, $secao);
-        if($parametro) {
-            return $parametro;
-        }
-        return false;
     }
 endif;

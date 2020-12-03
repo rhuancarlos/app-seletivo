@@ -99,9 +99,9 @@ class Static_custom {
         (!isset($params['libs_js'])) ? $params['libs_js'] = null : false;
         (!isset($params['libs_js'])) ? $params['apis_js'] = null : false;
         
-        $paramsDefault['css'] = "bootstrap.min|fontawesome.all|slicknav|nivo-lightbox|animate|main|responsive|{$params['css']}";
+        $paramsDefault['css'] = "bootstrap.min|fontawesome.all|slicknav|nivo-lightbox|animate|main|responsive|app_customized|{$params['css']}";
         $paramsDefault['libs_css'] = "{$params['libs_css']}";
-        $paramsDefault['js'] = "jquery-min|funcoes_gerais|bootstrap.min|angularjs/angular|angularjs/i18n/angular-locale_pt-br|re-tree|ng-device-detector|ua-device-detector|angularjs/angular-sanitize|{$params['js']}";
+        $paramsDefault['js'] = "jquery-min|funcoes_gerais|bootstrap.min|angularjs/angular|angularjs/i18n/angular-locale_pt-br|angularjs/angular-animate|funcoesAngular|re-tree|ng-device-detector|ua-device-detector|angularjs/angular-sanitize|{$params['js']}";
         $paramsDefault['libs_js'] = "sweetalert/js/sweetalert2.all.min|{$params['libs_js']}";
 
         return $paramsDefault;
