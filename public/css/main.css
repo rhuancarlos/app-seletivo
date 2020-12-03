@@ -978,8 +978,25 @@ a.back-to-top:hover, a.back-to-top:focus {
 }
 
 /* Schedule Area */
-#schedules {
+/* #schedules {
   background: #f3f4f3;
+} */
+#schedules {
+  background: linear-gradient(-45deg, #bab8b8, #fff, #b9a4a4);
+  background-size: 400% 400%;
+  animation: gradient 7s ease infinite;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
 
 #schedule-tab {
@@ -1642,6 +1659,7 @@ a.back-to-top:hover, a.back-to-top:focus {
   left: 0%;
   padding: 40px 15px;
   margin-left: -15px;
+  margin-right: -7px !important;
   z-index: 99;
 }
 

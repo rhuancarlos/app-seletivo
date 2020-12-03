@@ -88,6 +88,17 @@ h4 {
   .section-title {
     line-height: 30px !important;
   }
+  .logo-igreja {
+    width: 85px;
+  }
+  .titlepage {
+    display: -webkit-inline-box;
+  }
+}
+
+.logo-igreja {
+  width: 85px;
+  margin-left: -30px;
 }
 
 .swal2-popup {
@@ -112,3 +123,24 @@ a {
   color: black;
 }
 /* *|*:visited */
+
+.animate-if.ng-enter, .animate-if.ng-leave {
+  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+}
+
+.animate-if.ng-enter,
+.animate-if.ng-leave.ng-leave-active {
+  opacity:0;
+}
+
+.animate-if.ng-leave,
+.animate-if.ng-enter.ng-enter-active {
+  opacity:1;
+}
+
+.btn-sm {
+  padding: .25rem .5rem;
+  font-size: .875rem;
+  line-height: 1.5;
+  border-radius: .2rem;
+}
