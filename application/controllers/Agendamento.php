@@ -4,7 +4,8 @@ use \Mailjet\Resources;
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Agendamento extends MY_Controller {
-
+	
+	private $debugEmail = false;
 	public $data_view;
 
 	public function __construct() {
@@ -70,6 +71,7 @@ class Agendamento extends MY_Controller {
 
 			$dadosComplementares = array(
 				'opcao_oferta' => isset($post->dados_oferta->ofertaSelecionada) && !empty($post->dados_oferta->ofertaSelecionada) ? $post->dados_oferta->ofertaSelecionada : false,
+				'data_vencimento' => isset($post->dados_oferta->dataVencimento) && !empty($post->dados_oferta->dataVencimento) ? $post->dados_oferta->dataVencimento : false,
 				'tipo_camisa' => isset($post->dados_oferta->tipoCamisa) && !empty($post->dados_oferta->tipoCamisa) ? $post->dados_oferta->tipoCamisa : false,
 				'tamanho_camisa' => isset($post->dados_oferta->tamanhoCamisa) && !empty($post->dados_oferta->tamanhoCamisa) ? $post->dados_oferta->tamanhoCamisa : false
 			);
@@ -199,7 +201,7 @@ class Agendamento extends MY_Controller {
 		return $this->_actionSend($MailJetParametros, $sectionNotification);
 	}
 	
-	private function _actionSend($MailJetParametros, $sectionNotification) {
+	private function _actionSend($MailJetParametros, $sectionNotification = false) {
 		$inputEmpty = 0;
 		foreach($MailJetParametros['scheduling'] as $key => $value) {
 			if(empty($value)) {
@@ -219,8 +221,7 @@ class Agendamento extends MY_Controller {
 		$Scheduling_nome_campanha = getParametros(false,$sectionNotification,'Nome_Campanha')->definicoes;
 		$Parameters_TemplateID = intval(getParametros(false,$sectionNotification,'IntegracaoEmailTemplateID')->definicoes);
 		$Parameters_TemplateLanguage = boolval($MailJetParametros['parameters']['TemplateLanguage']);
-		$Parameters_Subject = $MailJetParametros['parameters']['Subject'];
-
+		$Parameters_Subject = NOME_CURTO_SISTEMA.' - '.(empty($sectionNotification) ? $MailJetParametros['parameters']['Subject'] : $Scheduling_nome_campanha);
 		$mj = new \Mailjet\Client($API_Key,$API_Secret,true,['version' => 'v3.1']);
 		$body = [
 			'Messages' => [
@@ -245,6 +246,10 @@ class Agendamento extends MY_Controller {
 				]
 			]
 		];
+		if($this->debugEmail) {
+			print '<pre>';
+			print_r($body);exit;
+		}
 		$response = $mj->post(Resources::$Email, ['body' => $body]);
 		return $response->success();
 	}
