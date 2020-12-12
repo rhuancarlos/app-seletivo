@@ -11,7 +11,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 $sub_dominio = explode('.', $_SERVER["HTTP_HOST"]);
-defined('PATH_SUBLEVEL') OR define('PATH_SUBLEVEL', 'publico/');
+defined('PATH_SUBLEVEL') OR define('PATH_SUBLEVEL', 'campanha/');
 defined('DOMAIN_PATH')  OR define('DOMAIN_PATH', $_SERVER["DOCUMENT_ROOT"].'/'.PATH_SUBLEVEL);
 defined('NOME_COMPLETO_SISTEMA')  OR define('NOME_COMPLETO_SISTEMA', 'Campanha Filadélfia | Participe e seja abençoado');
 defined('SIGLA_SISTEMA') OR define('SIGLA_SISTEMA', 'IBN Filadélfia');
@@ -71,6 +71,7 @@ defined('DEFAULT_DISATIVAR_USUARIO') OR define('DEFAULT_DISATIVAR_USUARIO', 0);
 */
 defined('URL_IMAGES_ICONS') OR define("URL_IMAGES_ICONS", URL . 'public/images/statics/icons/');
 defined('URL_IMAGES_LOGOS') OR define("URL_IMAGES_LOGOS", URL . 'public/images/statics/logos/');
+defined('URL_IMAGES_IGREJA') OR define("URL_IMAGES_IGREJA", URL . 'public/images/igreja/');
 defined('URL_IMAGES_ESTATICAS') OR define("URL_IMAGES_ESTATICAS", URL . 'public/images/statics/');
 defined('URL_IMAGE_FAVICON') OR define("URL_IMAGE_FAVICON", URL_IMAGES_ESTATICAS . 'favicon/favicon-ibnf-32x32.png');
 defined('URL_IMAGES_PERFIL') OR define("URL_IMAGES_PERFIL", URL . 'public/images/usuarios/perfil/');
@@ -79,13 +80,4 @@ defined('PATH_PUBLIC_LIBS') OR define('PATH_PUBLIC_LIBS', URL . 'public/libs/');
 defined('PATH_PUBLIC_JS') OR define('PATH_PUBLIC_JS', URL . 'public/js/');
 defined('PATH_PUBLIC_CSS') OR define('PATH_PUBLIC_CSS', URL . 'public/css/');
 
-defined('VIEW_MODULO_EQUIPES') OR define('VIEW_MODULO_EQUIPES', VIEWPATH . 'equipe/');
-defined('VIEW_MODULO_USUARIOS') OR define('VIEW_MODULO_USUARIOS', VIEWPATH . 'usuarios/');
-defined('VIEW_MODULO_MANUTENCAO_MENUS') OR define('VIEW_MODULO_MANUTENCAO_MENUS', VIEWPATH . 'manutencao_menu/');
-defined('VIEW_MODULO_GRUPOS_USUARIOS') OR define('VIEW_MODULO_GRUPOS_USUARIOS', VIEWPATH . 'grupos_usuarios/');
-defined('VIEW_MODULO_PARTICIPANTES') OR define('VIEW_MODULO_PARTICIPANTES', VIEWPATH . 'participante/');
-defined('VIEW_MODULO_PROVAS') OR define('VIEW_MODULO_PROVAS', VIEWPATH . 'provas/');
-defined('VIEW_MODULO_MATERIAIS') OR define('VIEW_MODULO_MATERIAIS', VIEWPATH . 'materiais/');
-defined('VIEW_MODULO_TAREFAS_PROCESSOS') OR define('VIEW_MODULO_TAREFAS_PROCESSOS', 'tarefas_processos/');
-defined('VIEW_MODULO_TAREFAS_PROCESSOS_COMPETICAO') OR define('VIEW_MODULO_TAREFAS_PROCESSOS_COMPETICAO', VIEW_MODULO_TAREFAS_PROCESSOS.'competicao/');
-defined('VIEW_MODULO_TAREFAS_PROCESSOS_FINANCEIRO') OR define('VIEW_MODULO_TAREFAS_PROCESSOS_FINANCEIRO', VIEW_MODULO_TAREFAS_PROCESSOS.'financeiro/');
+defined('VIEW_MODULO_MEUS_DADOS') OR define('VIEW_MODULO_MEUS_DADOS', VIEWPATH . 'meus_dados/');

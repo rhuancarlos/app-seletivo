@@ -14,6 +14,7 @@ app.controller("AgendamentoController", function($scope, deviceDetector, agendam
   $scope.cpfValid = false;
   $scope.dadosStages = {};
   $scope.ofertaSelecionada = null;
+  $scope.mostrarBrinde = false;
 
   $scope.getDataDefault = (_) => {
     preloader();
@@ -50,6 +51,10 @@ app.controller("AgendamentoController", function($scope, deviceDetector, agendam
     }
   }
 
+  $scope.myData = _ => {
+    return $scope.screenStage = 'myData';
+  }
+
   $scope.getDataStages = (stage) => {
     preloader();
     agendamentoApi.getDataStages(stage).then((response) => {
@@ -64,6 +69,9 @@ app.controller("AgendamentoController", function($scope, deviceDetector, agendam
   }
 
   $scope.backScreenStage = (form) => {
+    if(form == 'myData') {
+      return $scope.screenStage = 1;
+    }
     return $scope.screenStage = form-1;
   }
   
@@ -234,5 +242,24 @@ app.controller("AgendamentoController", function($scope, deviceDetector, agendam
     }
   }
 
+  $scope.verBrinde = (brindeId) => {
+    if(typeof document.getElementById(`brindeimg_${brindeId}`).id !== 'undefined') {
+      if('brindeimg_'+brindeId == document.getElementById(`brindeimg_${brindeId}`).id) {
+        // $scope.mostrarBrinde = true;
+        if(document.getElementById(`brindeimg_${brindeId}`).style.display == ''){
+          document.getElementById(`brindeimg_${brindeId}`).style.display = 'none';
+        } else {
+          document.getElementById(`brindeimg_${brindeId}`).style.display = '';
+        }
+      }
+    } else {
+      // $scope.mostrarBrinde = false;
+      if(document.getElementById(`brindeimg_${brindeId}`).style.display == 'none'){
+        document.getElementById(`brindeimg_${brindeId}`).style.display = '';
+      } else {
+        document.getElementById(`brindeimg_${brindeId}`).style.display = '';
+      }
+    }
+  }
 
 });
