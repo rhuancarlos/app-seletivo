@@ -29,7 +29,7 @@ if(!function_exists('getParametroPorDescricao')):
 endif;
 
 
-if(!function_exists('getTiposInscricoes')):
+if(!function_exists('getTipoInscricao')):
     function getTipoInscricao($id_tipo_inscricao = false, $sigla = false){
         $ci = & get_instance();
         $ci->load->model('tipos_inscricao_m');
