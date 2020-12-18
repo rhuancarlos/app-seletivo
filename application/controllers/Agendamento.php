@@ -66,7 +66,7 @@ class Agendamento extends MY_Controller {
 				'estado' => $post->dados_pessoais->localizacao->estado,
 				'cidade' => $post->dados_pessoais->localizacao->cidade,
 				'numero_endereco' => $post->dados_pessoais->localizacao->numero_endereco,
-				'tipo_inscricao' => getTipoInscricao(false, 'CAMP')->idtipoinscricao
+				'tipo_inscricao_id' => getTipoInscricao(false, 'CAMP')->idtipoinscricao
 			);
 
 			$dadosComplementares = array(
