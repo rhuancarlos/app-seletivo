@@ -47,12 +47,6 @@ class Inscricoes_m extends CI_Model{
 
 	public function verificarSeExisteInscricao($termoValidacao = false) {	
 		if(!empty($termoValidacao)){
-			if(isset($termoValidacao['cpf'])) {
-				$this->db->where("i.cpf like '%".$termoValidacao['cpf']."%'");
-			}
-			if(isset($termoValidacao['nome_completo'])) {
-				$this->db->where("i.nome_completo like '%".$termoValidacao['nome_completo']."%'");
-			}
 			if(isset($termoValidacao['email'])) {
 				$this->db->where("i.email like '%".$termoValidacao['email']."%'");
 			}

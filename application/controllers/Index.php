@@ -23,39 +23,29 @@ class Index extends MY_Controller {
 		$dados_pagina = $this->getElementosPagina();
 		$this->data_view["elementos_pagina"] = array(
 			'titulo' => 'INSCRIÇÃO TESTE SELETIVO', 
-			'sub_titulo' => null,//'"Melhor um dia na Tua Casa, do que mil em outro lugar". - Salmos 84:10',
+			'sub_titulo' => null,
 			'conteudoStages' => $dados_pagina
 		);
 		$this->loadView($this->data_view);
 	}
 
 	private function getElementosPagina() {
-
-		// $dados['stage1']['texto_area_principal'] = "<p><strong>Graça e Paz!</strong><br><br>
-		// É com imensa alegria que informamos nosso retorno aos cultos presenciais, adequados com todas as medidas de segurança, estamos abertos para adorar livremente o nosso Deus.
-		// Como a expectativa está grande para essa CELEBRAÇÃO HISTÓRICA, e pensando no seu conforto e segurança`. <br>Seguiremos com um agendamento para nossos cultos, pois estamos com vagas limitadas devido as medidas de segurança.<br>
-		// Assim, juntamente com sua Família estaremos todos reunidos da melhor forma possível.<br><br>
-		// Esperamos você e sua Família, estamos com saudades de adorarmos todos juntos como Igreja!</p>";
 		$dados['stage1']['texto_area_principal'] = '<img src="'.URL_IMAGES_IGREJA.'img_campanha_contruindo_algo_maior.jpeg" style="width: inherit;border-radius: 23px;">';
 		
 		$dados['stage2']['title'] = "SOBRE VOCÊ";
-		$dados['stage2']['descendencia'] = array
-		(
-			'DD' => 'Doador',
-			'FV' => 'Visitante',
-			'F1' => 'Marcos Teodoro e Cristiane',
-			'F2' => 'Francisco e Chaguinha',
-			'F3' => 'Sued e Jaqueline',
-			'F4' => 'Lucivaldo e Célia',
-			'F5' => 'Cesar Oliveira e Liliane',
-			'F6' => 'Jozafá e Késia',
-			'F7' => 'Junior e Raquel',
-			'F8' => 'Filho e Jane',
-			'F9' => 'Marcos Vieira e Emilene',
-			'F10' => 'Aurifran e Ana',
-			'F11' => 'Márcio e Jucélia',
-			'F12' => 'Aroldo e Raquel'
-		);
+		$dados['stage2']['serie'] = array(
+			'1s' => '1º ano do Ens. Fundamental',
+			'2s' => '2º ano do Ens. Fundamental',
+			'3s' => '3º ano do Ens. Fundamental',
+			'4s' => '4º ano do Ens. Fundamental',
+			'5s' => '5º ano do Ens. Fundamental',
+			'6s' => '6º ano do Ens. Fundamental',
+			'7s' => '7º ano do Ens. Fundamental',
+			'8s' => '8º ano do Ens. Fundamental',
+			'9s' => '9º ano do Ens. Fundamental',
+			'1a' => '1º ano do Ens. Médio',
+			'2a' => '2º ano do Ens. Médio',
+			'3a' => '3º ano do Ens. Médio');
 		$dados['stage3']['title'] = "SEU ENDEREÇO";
 		$dados['stage3']['texto_area_principal'] = "<p>Nossos cultos serão em duas sessões, escolha a mais ideal. Será uma noite especial.</p>";
 		$dados['stage3']['texto_area_qtd_pessoas'] = "<p>Aqui você pode colocar quantas pessoas irão com você ao total, assim facilitamos o agendamento de cadeiras de você e sua Família.</p>";
@@ -63,16 +53,6 @@ class Index extends MY_Controller {
 		$dados['stage4']['img_stage_4'] = '<img src="'.URL_IMAGES_IGREJA.'img_campanha_contruindo_algo_maior.jpeg" style="width: 100%;border-radius: 23px;margin-bottom: 30px;">';
 		$dados['myData']['title'] = "Meus Dados";
 		return $dados;	
-	}
-					
-	public function getDataStages() {
-		header('Content-type: application/json');
-		$post = json_decode(file_get_contents('php://input'));
-		switch($stage = $post->stage) {
-			case '4':
-				print json_encode ($this->_getDataOfertas($stage));
-			break;
-		}
 	}
 
 	private function _getDataOfertas($stage) {
