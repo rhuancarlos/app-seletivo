@@ -1,6 +1,6 @@
 <?php
-require_once APPPATH.'mailjet/vendor/autoload.php';
-use \Mailjet\Resources;
+// require_once APPPATH.'mailjet/vendor/autoload.php';
+// use \Mailjet\Resources;
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Agendamento extends MY_Controller {
@@ -185,6 +185,7 @@ class Agendamento extends MY_Controller {
 		return false;
 	}
 
+	/*
 	private function sendNotification($typeNotification, $sectionNotification, $codeAgendamento) {
 		if(!$codeAgendamento) {return false;}
 		$MailJetParametros['scheduling'] = array();
@@ -253,6 +254,7 @@ class Agendamento extends MY_Controller {
 		$response = $mj->post(Resources::$Email, ['body' => $body]);
 		return $response->success();
 	}
+	*/
 
 	private function verificarSeExisteInscricao($termoValidacao) {
 		if($termoValidacao) {

@@ -6,7 +6,7 @@
         <div class="col-12">
           <div class="section-title-header text-center">
             <h1 class="section-title wow fadeInUp" data-wow-delay="0.2s">
-              <img src="https://ibnfiladelfia.com.br/wp-content/uploads/2020/07/cropped-Adesivo-Filade%CC%81fia-2018-300x212-1-192x192.png" class="logo-igreja" style="width: 85px;margin-left: -30px;">
+              <img src="https://i2.wp.com/vivario.org.br/wordpress/wp-content/uploads/2019/06/processo_seletivo-270x246.png?fit=270%2C246&w=240" class="logo-igreja" style="width: 85px;margin-left: -30px;">
               <a href="<?= base_url()?>" class="titlepage"><?= $elementos_pagina['titulo']; ?></a>
             </h1>
           </div>

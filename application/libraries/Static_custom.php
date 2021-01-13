@@ -81,7 +81,7 @@ class Static_custom {
     public function __construct($params = array()) {
         $this->CI = & get_instance();
         $this->base_url = $this->CI->config->item('base_url');
-        $this->hash_file = exec('git rev-parse HEAD');
+        // $this->hash_file = exec('git rev-parse HEAD');
         $params = $this->setAssetsDefault($params);
         $this->printLibsCss($params["libs_css"]);
         $this->printLibsJs($params["libs_js"]);

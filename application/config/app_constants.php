@@ -11,21 +11,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 $sub_dominio = explode('.', $_SERVER["HTTP_HOST"]);
-defined('PATH_SUBLEVEL') OR define('PATH_SUBLEVEL', 'campanha/');
+defined('PATH_SUBLEVEL') OR define('PATH_SUBLEVEL', '/');
 defined('DOMAIN_PATH')  OR define('DOMAIN_PATH', $_SERVER["DOCUMENT_ROOT"].'/'.PATH_SUBLEVEL);
-defined('NOME_COMPLETO_SISTEMA')  OR define('NOME_COMPLETO_SISTEMA', 'Campanha Filadélfia | Participe e seja abençoado');
-defined('SIGLA_SISTEMA') OR define('SIGLA_SISTEMA', 'IBN Filadélfia');
-defined('NOME_CURTO_SISTEMA') OR define('NOME_CURTO_SISTEMA', 'IBN Filadélfia');
+defined('NOME_COMPLETO_SISTEMA')  OR define('NOME_COMPLETO_SISTEMA', 'Seletivo Objetivo | Matricule-se já !');
+defined('SIGLA_SISTEMA') OR define('SIGLA_SISTEMA', 'SLTV Objetivo');
+defined('NOME_CURTO_SISTEMA') OR define('NOME_CURTO_SISTEMA', 'SLTV Objetivo');
 defined('NOME_DOMINIO_SISTEMA') OR define('NOME_DOMINIO_SISTEMA', $sub_dominio[0]);
-defined('SIGLA_SESSAO_SISTEMA') OR define('SIGLA_SESSAO_SISTEMA', "_IBN_Filadelfia");
+defined('SIGLA_SESSAO_SISTEMA') OR define('SIGLA_SESSAO_SISTEMA', "_SLTV");
 defined('URL') OR define('URL',  (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on' ) ? 'https://'.$_SERVER["HTTP_HOST"].'/'.PATH_SUBLEVEL : 'http://'.$_SERVER["HTTP_HOST"].'/'.PATH_SUBLEVEL);
 
-defined('ANO_START_PROJETO') OR define('ANO_START_PROJETO', '2020');
+defined('ANO_START_PROJETO') OR define('ANO_START_PROJETO', '2021');
 Defined('SISTEMA_TAG_LINGUAGENS') OR define('SISTEMA_TAG_LINGUAGENS', array('pt-br', 'en-US', 'fr'));
 Defined('SISTEMA_TAG_CODIFICACAO_PAGINA') OR define('SISTEMA_TAG_CODIFICACAO_PAGINA', 'utf-8');
 
-defined('EMPRESA_UTILIZADORA') OR define('EMPRESA_UTILIZADORA', 'IBN Filadélfia');
-defined('DESENVOLVEDOR_SISTEMA_NOME') OR define('DESENVOLVEDOR_SISTEMA_NOME', 'CriativeTecnologia');
+defined('EMPRESA_UTILIZADORA') OR define('EMPRESA_UTILIZADORA', 'Empresa Teste');
+defined('DESENVOLVEDOR_SISTEMA_NOME') OR define('DESENVOLVEDOR_SISTEMA_NOME', 'Rhuan Carlos');
 defined('DESENVOLVEDOR_SISTEMA_SITE') OR define('DESENVOLVEDOR_SISTEMA_SITE', 'https://www.instagram.com/rhuanoliver/');
 defined('DESENVOLVEDOR_SISTEMA_EMAIL') OR define('DESENVOLVEDOR_SISTEMA_EMAIL', 'rhuancarlosg12@gmail.com');
 defined('URL_API') OR define("URL_API", 'link_for_api_here');
@@ -42,10 +42,10 @@ defined('HASH_ASSETS') OR define("HASH_ASSETS", md5(microtime()));
 
 //-->BANCO DE DADOS REMOTE
 define('HOSTNAME_REMOTE', 'localhost');
-define('HOSTNAME_REMOTE_USER_DB', 'ibnfilad_sistema');
-define('HOSTNAME_REMOTE_PASS_DB', 'F~&Cqgtue^@1m#c2r*');
-define('HOSTNAME_REMOTE_NAME_DB', 'ibnfilad_sistema');
-define('HOSTNAME_REMOTE_PORT_DB', '3306');
+define('HOSTNAME_REMOTE_USER_DB', '');
+define('HOSTNAME_REMOTE_PASS_DB', '');
+define('HOSTNAME_REMOTE_NAME_DB', '');
+define('HOSTNAME_REMOTE_PORT_DB', '');
 
 //-->BANCO DE DADOS LOCALHOST
 define('HOSTNAME_LOCALHOST', '');

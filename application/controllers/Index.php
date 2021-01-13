@@ -22,8 +22,8 @@ class Index extends MY_Controller {
 	public function index() {
 		$dados_pagina = $this->getElementosPagina();
 		$this->data_view["elementos_pagina"] = array(
-			'titulo' => 'Construindo Algo Maior', 
-			'sub_titulo' => '"Melhor um dia na Tua Casa, do que mil em outro lugar". - Salmos 84:10',
+			'titulo' => 'INSCRIÇÃO TESTE SELETIVO', 
+			'sub_titulo' => null,//'"Melhor um dia na Tua Casa, do que mil em outro lugar". - Salmos 84:10',
 			'conteudoStages' => $dados_pagina
 		);
 		$this->loadView($this->data_view);
