@@ -9,6 +9,6 @@ O projeto visa a realização de inscrições e administração das inscrições
 
 ### Painel de Administração
 * URL de acesso: https://seletivo.000webhostapp.com/administrador.php
-	1. Mailjet
+	1. Como usar
 	 - usuario: admin@seletivoteste.com
 	 - senha: 1234
