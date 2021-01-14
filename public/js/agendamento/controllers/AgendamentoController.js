@@ -95,6 +95,9 @@ app.controller("AgendamentoController", function($scope, deviceDetector, agendam
       if(!$scope.dadosAgendamento.dados_pessoais.serie || $scope.dadosAgendamento.dados_pessoais.serie == "") {
         inputsvazios.push("- Série");
       }
+      if(!$scope.dadosAgendamento.dados_pessoais.como_ficou_sabendo || $scope.dadosAgendamento.dados_pessoais.como_ficou_sabendo == "") {
+        inputsvazios.push("- Como ficou sabendo do seletivo");
+      }
       if(inputsvazios.length > 0) {
         removePreloader();
         Swal.fire({title: 'Ops! Algo errado aqui ... ', type: 'warning', html: '<b>Você não preencheu:</b><br>' + inputsvazios.join('<br>') });
