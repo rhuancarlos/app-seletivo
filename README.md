@@ -1,23 +1,14 @@
-# INSCRIÇÕES DE CAMPANHAS
-Projeto para inscrições de pessoas que queiram participar de campanhas da igreja.
+# APP DE SELETIVO
+O projeto visa a realização de inscrições e administração das inscrições do seletivo. Com isso conta com um dois paineis para tal processo. Confira abaixo.
 
 
-### Recursos
-<!-- * Painel com 4 stagios. -->
-* Notificação de confirmação por e-mail
+### Painel de Inscrições
+* Painel com 3 stagios
 <!-- * Contador de vagas disponíveis -->
-* Painel administrativo com emissor de relatórios por periodo.
+* URL de acesso: https://seletivo.000webhostapp.com/
 
-### Importante 
-
-> O Recurso de notificação de confirmação por e-mail utiliza a integração com o projeto mailjet. Após inclusão da biblioteca no projeto deve-se realizar a parametrização via painel administrativo do sistema o token e chave de integração, podendo ser habilitado ou não o envio da confirmação. Feita as devidas configuração será possível verificar via callback o retorno do envio da confirmação.
-
-
-## Implementação 
-1. Mailjet
-
-> - Realizar Clone do projeto dentro da pasta **application/
-https://gitlab.com/rhuanoliver/mailjet**
-> - Habilitar a linha 2 do controller **Campanhas.php**
->- Acessar o painel administrativo **sistema.ibnfiladelfia.com.br** 
-e configurar o token e senha de integração com a plataforma
+### Painel de Administração
+* URL de acesso: https://seletivo.000webhostapp.com/administrador.php
+	1. Mailjet
+	 - usuario: admin@seletivoteste.com
+	 - senha: 1234
