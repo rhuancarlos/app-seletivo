@@ -1,5 +1,5 @@
 # APP DE SELETIVO
-O projeto visa a realização de inscrições e administração das inscrições do seletivo. Com isso conta com um dois paineis para tal processo. Confira abaixo.
+O projeto visa a realização de inscrições e administração das inscrições do seletivo. Com isso conta com dois paineis para tal processo. Confira abaixo.
 
 
 ### Painel de Inscrições
