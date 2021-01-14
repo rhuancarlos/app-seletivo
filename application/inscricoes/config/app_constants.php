@@ -42,10 +42,10 @@ defined('HASH_ASSETS') OR define("HASH_ASSETS", md5(microtime()));
 
 //-->BANCO DE DADOS REMOTE
 define('HOSTNAME_REMOTE', 'localhost');
-define('HOSTNAME_REMOTE_USER_DB', 'id15904073_app_seletivo');
-define('HOSTNAME_REMOTE_PASS_DB', '/j_E-c$*!nILPb6w');
-define('HOSTNAME_REMOTE_NAME_DB', 'id15904073_appseletivo');
-define('HOSTNAME_REMOTE_PORT_DB', '3306');
+define('HOSTNAME_REMOTE_USER_DB', '');
+define('HOSTNAME_REMOTE_PASS_DB', '');
+define('HOSTNAME_REMOTE_NAME_DB', '');
+define('HOSTNAME_REMOTE_PORT_DB', '');
 
 //-->BANCO DE DADOS LOCALHOST
 define('HOSTNAME_LOCALHOST', '');
